@@ -3,7 +3,7 @@
 library(plumber)
 
 # Define a Plumber router
-r <- plumb("/plumber.R")
+r <- plumb()
 
 # Example endpoint
 r$handle("GET", "/", function(req, res) {
