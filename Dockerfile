@@ -17,5 +17,5 @@ COPY plumber.R /plumber.R
 # Expose the port Plumber will run on
 EXPOSE 8000
 
-# Run the Plumber API script
-CMD ["R", "-e", "source('/plumber.R')"]
+# Run the Plumber API
+CMD ["R", "-e", "pr <- plumber::plumb('/plumber.R'); pr$run(host = '0.0.0.0', port = as.numeric(Sys.getenv('PORT', 8000)))"]
