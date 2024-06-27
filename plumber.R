@@ -2,14 +2,9 @@
 
 library(plumber)
 
-# Define a Plumber router
-r <- plumb()
-
-# Example endpoint
-r$handle("GET", "/", function(req, res) {
-  res$status(200)
-  list(message = "Hello, world!")
-})
-
-# Run the API
-r$run(host = '0.0.0.0', port = as.numeric(Sys.getenv('PORT', 8000)))
+#* Echo the input
+#* @param msg The message to echo
+#* @get /echo
+function(msg="") {
+  list(msg = paste0("The message is: '", msg, "'"))
+}
