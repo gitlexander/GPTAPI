@@ -12,4 +12,4 @@ r$handle("GET", "/", function(req, res) {
 })
 
 # Run the API
-pr <- r$run(host = '0.0.0.0', port = as.numeric(Sys.getenv('PORT', 8000)))
+r$run(host = '0.0.0.0', port = as.numeric(Sys.getenv('PORT', 8000)))
